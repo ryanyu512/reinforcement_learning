@@ -1,6 +1,7 @@
 import os
 import numpy as np
 
+EMPTY = 0
 HUMAN = 1
 AGENT = 2
 
@@ -24,15 +25,15 @@ class TIC_TAC_TOE():
 
         #check vertical and horizontal line
         for i in range(3):
-            if self.env[i*3] == self.env[i*3 + 1] and self.env[i*3] == self.env[i*3 + 2] and self.env[i*3] > 0:
+            if self.env[i*3] == self.env[i*3 + 1] and self.env[i*3] == self.env[i*3 + 2] and self.env[i*3] > EMPTY:
                 return self.env[i*3]
-            if self.env[i] == self.env[i + 3] and self.env[i] == self.env[i + 6]  and self.env[i] > 0:
+            if self.env[i] == self.env[i + 3] and self.env[i] == self.env[i + 6]  and self.env[i] > EMPTY:
                 return self.env[i]
         
         #check diagonal
-        if self.env[0] == self.env[4] and self.env[0] == self.env[8]  and self.env[0] > 0:
+        if self.env[0] == self.env[4] and self.env[0] == self.env[8]  and self.env[0] > EMPTY:
             return self.env[0]
-        if self.env[2] == self.env[4] and self.env[2] == self.env[6]  and self.env[2] > 0:
+        if self.env[2] == self.env[4] and self.env[2] == self.env[6]  and self.env[2] > EMPTY:
             return self.env[2]
         
         return None
