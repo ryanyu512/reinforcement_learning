@@ -40,15 +40,16 @@ class TIC_TAC_TOE():
     def is_end_game(self):
 
         env = list(self.env)
-        if env.count(0) == 0:
-            print(f"no winner!")
-            return True
-        
+
         winner = self.who_win()
         if winner is not None:
             print(f"winner: {'human!' if winner == 1 else 'computer!'}")
             return True
-    
+
+        if env.count(0) == 0:
+            print(f"no winner!")
+            return True
+        
         return False
     
     def human_vs_agent(self, who_first):

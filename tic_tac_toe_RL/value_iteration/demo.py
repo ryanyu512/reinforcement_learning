@@ -8,8 +8,10 @@ AGENT = 2
 agent = Agent(epsilon = 1e-10)
 
 #training
-agent.iterate(who_first = HUMAN)
+agent.iterate(who_first = AGENT)
 
 #initialise game
 game = TIC_TAC_TOE(agent = agent)
-game.human_vs_agent(who_first = HUMAN)
+
+#start playing
+game.human_vs_agent(who_first = AGENT)

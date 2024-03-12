@@ -60,11 +60,11 @@ class Agent():
     def is_invalid_state(self, s, who_first):
 
         if who_first == AGENT1:
-            #if agent1 first => 1,2,1,... => when in the non-terminal state => agent2's turn => agent1's move always more than agent2 by "1"
+            #if agent1 first => 1,2,1,... => when in the non-terminal state => agent2's turn => agent1's move always more than agent2'move by "1"
             if s.count(AGENT1) - s.count(AGENT2) != 1:
                 return True
         else:
-            #if agent2 first => 2,1,..    => when in the non-terminal state => agent2's turn => agent2's move always equal to agent1 
+            #if agent2 first => 2,1,..    => when in the non-terminal state => agent2's turn => agent2's move always equal to agent1's move
             if s.count(AGENT1) != s.count(AGENT2):
                 return True
 
